@@ -1,6 +1,6 @@
 # avi2mp4
 
-[![CI](https://github.com/Lorenzo/avi2mp4/actions/workflows/test.yml/badge.svg)](https://github.com/Lorenzo/avi2mp4/actions/workflows/test.yml)
+[![CI](https://github.com/LorenzoTr-dev/avi2mp4/actions/workflows/test.yml/badge.svg)](https://github.com/LorenzoTr-dev/avi2mp4/actions/workflows/test.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 
@@ -27,7 +27,7 @@ CLI tool to convert AVI files to MP4 using `ffmpeg`. Features batch processing w
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/Lorenzo/avi2mp4.git
+   git clone https://github.com/LorenzoTr-dev/avi2mp4.git
    cd avi2mp4
    ```
 
@@ -107,7 +107,7 @@ Strumento da riga di comando (CLI) per convertire file AVI in MP4 usando `ffmpeg
 
 1. **Clona il repository**:
    ```bash
-   git clone https://github.com/Lorenzo/avi2mp4.git
+   git clone https://github.com/LorenzoTr-dev/avi2mp4.git
    cd avi2mp4
    ```
 
