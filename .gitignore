@@ -1,4 +1,4 @@
-.venv/
+﻿.venv/
 __pycache__/
 *.pyc
 *.pyo
@@ -29,3 +29,4 @@ dist/
 # OS files
 .DS_Store
 Thumbs.db
+desktop.ini

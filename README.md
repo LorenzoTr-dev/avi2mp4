@@ -1,4 +1,4 @@
-# avi2mp4
+﻿# avi2mp4
 
 [![CI](https://github.com/LorenzoTr-dev/avi2mp4/actions/workflows/test.yml/badge.svg)](https://github.com/LorenzoTr-dev/avi2mp4/actions/workflows/test.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -10,133 +10,176 @@
 
 ## English
 
-CLI tool to convert AVI files to MP4 using `ffmpeg`. Features batch processing with progress bars, interactive CLI menu, and automated directory management (input/output/archive).
+`avi2mp4` is a Python CLI for converting AVI files to MP4 with `ffmpeg`. It supports batch conversion, an interactive menu, safe archiving, and configurable input/output folders.
+
+### Preview
+
+![avi2mp4 screenshot](./Screenshot%202026-06-23%20165010.png)
 
 ### Features
-- 🚀 **Batch Processing**: Convert multiple AVI files sequentially with a beautiful Rich progress bar.
-- 🎨 **Interactive Menu**: Run in interactive mode to change paths, toggle dry-run or overwrite options, customize themes, and launch conversions.
-- 📂 **Smart Archiving**: Automatically moves original AVI files to an archive directory only upon successful conversion.
-- 🛠️ **Configurable**: Fully customizable input, output, and archive directories.
-- 🛡️ **Safe**: Optional dry-run mode and option to overwrite or skip existing files.
+
+- Batch conversion with Rich progress bars
+- Interactive menu to change folders, theme, dry-run, and overwrite options
+- Automatic archive move only after successful conversion
+- Safe dry-run mode
+- Simple packaging and command-line entry point
 
 ### Requirements
+
 - Python 3.10+
-- `ffmpeg` installed and added to your system `PATH` ([download ffmpeg](https://ffmpeg.org/download.html))
+- `ffmpeg` available in your `PATH`
 
 ### Installation
 
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/LorenzoTr-dev/avi2mp4.git
-   cd avi2mp4
-   ```
+```bash
+git clone https://github.com/LorenzoTr-dev/avi2mp4.git
+cd avi2mp4
+python -m venv .venv
+```
 
-2. **Create and activate a virtual environment**:
-   ```bash
-   python -m venv .venv
-   # On Windows:
-   .venv\Scripts\activate
-   # On macOS/Linux:
-   source .venv/bin/activate
-   ```
+Activate the virtual environment:
 
-3. **Install the package**:
-   ```bash
-   pip install .
-   ```
+```bash
+# Windows
+.venv\Scripts\activate
 
-   *For development setup (including tests and linting tools):*
-   ```bash
-   pip install -e .[dev]
-   ```
+# macOS/Linux
+source .venv/bin/activate
+```
+
+Install the project:
+
+```bash
+pip install .
+```
+
+For development:
+
+```bash
+pip install -e .[dev]
+```
 
 ### Usage
 
-#### Command Line Mode
 ```bash
-# Default folders: ./input → ./output, original files archived in ./archive
+# Default folders: ./input -> ./output, archive originals in ./archive
 avi2mp4
 
 # Custom paths
 avi2mp4 -i ./my_videos -o ./converted_videos -a ./archive_folder
 
-# Dry-run (lists what would be converted without doing anything)
+# Dry-run
 avi2mp4 --dry-run
 
 # Overwrite existing MP4 files
 avi2mp4 --overwrite
-```
 
-#### Interactive Menu Mode
-You can launch an interactive UI/menu with:
-```bash
+# Interactive mode
 avi2mp4 --interactive
-# or
-avi2mp4 -m
 ```
 
-#### CLI Arguments
+### CLI Arguments
 
 | Flag | Shortcut | Default | Description |
-|------|----------|---------|-------------|
+| --- | --- | --- | --- |
 | `--input` | `-i` | `./input` | Source AVI directory |
 | `--output` | `-o` | `./output` | Destination MP4 directory |
 | `--archive` | `-a` | `./archive` | Archive directory for original AVIs |
-| `--dry-run` | — | — | Run without converting files |
-| `--overwrite` | — | — | Overwrite existing MP4 files |
-| `--interactive` | `-m` | — | Launch interactive menu |
+| `--dry-run` | - | - | Run without converting files |
+| `--overwrite` | - | - | Overwrite existing MP4 files |
+| `--interactive` | `-m` | - | Launch interactive menu |
 
----
+### Testing
+
+```bash
+python tests/test_smoke.py
+pytest
+```
 
 ## Italiano
 
-Strumento da riga di comando (CLI) per convertire file AVI in MP4 usando `ffmpeg`. Include elaborazione batch con barre di progresso, menu interattivo e gestione automatica delle cartelle (input/output/archive).
+`avi2mp4` e una CLI Python per convertire file AVI in MP4 con `ffmpeg`. Supporta conversione batch, menu interattivo, archiviazione sicura e cartelle configurabili.
 
-### Caratteristiche
-- 🚀 **Elaborazione Batch**: Converte file AVI in sequenza con una barra di avanzamento avanzata.
-- 🎨 **Menu Interattivo**: Avvia una modalità interattiva per modificare i percorsi, attivare il dry-run, scegliere il tema grafico e lanciare la conversione.
-- 📂 **Archiviazione Sicura**: Sposta i file AVI originali nell'archivio solo a conversione riuscita.
-- 🛠️ **Configurabile**: Personalizza liberamente le cartelle di input, output e archivio.
-- 🛡️ **Sicuro**: Previene la sovrascrittura accidentale (attivabile con flag) e supporta la modalità dry-run.
+### Anteprima
+
+![screenshot di avi2mp4](./Screenshot%202026-06-23%20165010.png)
+
+### Funzionalita
+
+- Conversione batch con barre di avanzamento Rich
+- Menu interattivo per cambiare cartelle, tema, dry-run e overwrite
+- Spostamento automatico dei file originali solo dopo conversione riuscita
+- Modalita dry-run sicura
+- Packaging semplice e comando CLI pronto per `pip install`
 
 ### Requisiti
+
 - Python 3.10+
-- `ffmpeg` installato e presente nel `PATH` di sistema ([download ffmpeg](https://ffmpeg.org/download.html))
+- `ffmpeg` disponibile nel `PATH`
 
 ### Installazione
 
-1. **Clona il repository**:
-   ```bash
-   git clone https://github.com/LorenzoTr-dev/avi2mp4.git
-   cd avi2mp4
-   ```
-
-2. **Crea e attiva un ambiente virtuale**:
-   ```bash
-   python -m venv .venv
-   # Su Windows:
-   .venv\Scripts\activate
-   # Su macOS/Linux:
-   source .venv/bin/activate
-   ```
-
-3. **Installa il pacchetto**:
-   ```bash
-   pip install .
-   ```
-
-   *Per lo sviluppo (include pytest e ruff):*
-   ```bash
-   pip install -e .[dev]
-   ```
-
-### Sviluppo e Test
-
-Per verificare la formattazione e l'esecuzione dei test:
 ```bash
-# Esegui i test unitari/smoke
-python tests/test_smoke.py
+git clone https://github.com/LorenzoTr-dev/avi2mp4.git
+cd avi2mp4
+python -m venv .venv
+```
 
-# Se hai installato le dipendenze dev, puoi usare pytest
+Attiva l'ambiente virtuale:
+
+```bash
+# Windows
+.venv\Scripts\activate
+
+# macOS/Linux
+source .venv/bin/activate
+```
+
+Installa il progetto:
+
+```bash
+pip install .
+```
+
+Per sviluppo:
+
+```bash
+pip install -e .[dev]
+```
+
+### Utilizzo
+
+```bash
+# Cartelle di default: ./input -> ./output, originali archiviati in ./archive
+avi2mp4
+
+# Percorsi personalizzati
+avi2mp4 -i ./my_videos -o ./converted_videos -a ./archive_folder
+
+# Dry-run
+avi2mp4 --dry-run
+
+# Sovrascrivi i file MP4 esistenti
+avi2mp4 --overwrite
+
+# Modalita interattiva
+avi2mp4 --interactive
+```
+
+### Argomenti CLI
+
+| Flag | Shortcut | Default | Descrizione |
+| --- | --- | --- | --- |
+| `--input` | `-i` | `./input` | Cartella sorgente AVI |
+| `--output` | `-o` | `./output` | Cartella destinazione MP4 |
+| `--archive` | `-a` | `./archive` | Cartella archivio per gli AVI originali |
+| `--dry-run` | - | - | Esegui senza convertire i file |
+| `--overwrite` | - | - | Sovrascrivi i file MP4 esistenti |
+| `--interactive` | `-m` | - | Avvia il menu interattivo |
+
+### Test
+
+```bash
+python tests/test_smoke.py
 pytest
 ```
