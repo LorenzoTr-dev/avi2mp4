@@ -1,0 +1,28 @@
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+.ruff_cache/
+.pytest_cache/
+docs_dev/
+input/
+output/
+archive/
+
+# Local config
+config.json
+.avi2mp4.json
+
+# IDE / Agent configs
+.agents/
+.claude/
+.codex/
+
+# Packaging and distribution
+build/
+dist/
+*.egg-info/
+
+# OS files
+.DS_Store
+Thumbs.db

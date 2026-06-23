@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "avi2mp4"
+version = "1.0.0"
+description = "CLI tool to convert AVI files to MP4 using ffmpeg"
+readme = "README.md"
+authors = [
+    {name = "Lorenzo"}
+]
+license = {file = "LICENSE"}
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Environment :: Console",
+    "Topic :: Multimedia :: Video :: Conversion",
+]
+keywords = ["ffmpeg", "avi", "mp4", "converter", "cli", "interactive"]
+dependencies = [
+    "rich>=10.0.0",
+    "questionary>=2.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "ruff>=0.1.0",
+]
+
+[project.scripts]
+avi2mp4 = "avi2mp4.cli:main"
+
+[tool.ruff]
+target-version = "py310"
+exclude = [
+    ".agents",
+    ".claude",
+    ".venv",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
