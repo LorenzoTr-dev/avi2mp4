@@ -18,6 +18,9 @@ config.json
 .claude/
 .codex/
 
+# Excluded documents
+CLI_UI_UX_SPEC.md
+
 # Packaging and distribution
 build/
 dist/
